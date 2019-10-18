@@ -139,6 +139,7 @@ const builds = [
     package: 'react-relay',
     exports: {
       index: 'index.js',
+      hooks: 'hooks.js',
       ReactRelayContext: 'ReactRelayContext.js',
     },
     bundles: [
@@ -146,6 +147,12 @@ const builds = [
         entry: 'index.js',
         output: 'react-relay',
         libraryName: 'ReactRelay',
+        libraryTarget: 'umd',
+      },
+      {
+        entry: 'hooks.js',
+        output: 'react-relay-hooks',
+        libraryName: 'ReactRelayHooks',
         libraryTarget: 'umd',
       },
     ],
@@ -238,6 +245,7 @@ const builds = [
 ];
 
 const modules = gulp.parallel(
+  // ...builds.concat({package: 'relay-experimental'}).map(
   ...builds.map(
     build =>
       function modulesTask() {
@@ -251,6 +259,18 @@ const modules = gulp.parallel(
       },
   ),
 );
+
+const copyRelayExperimental = [
+  function copyRelayExperimental() {
+    return gulp
+      .src(INCLUDE_GLOBS, {
+        cwd: path.join(PACKAGES, 'relay-experimental'),
+      })
+      .pipe(once())
+      .pipe(babel(babelOptions))
+      .pipe(gulp.dest(path.join(DIST, 'react-relay', 'lib', 'relay-experimental')));
+  }
+]
 
 const copyFilesTasks = [];
 builds.forEach(build => {
@@ -277,12 +297,25 @@ builds.forEach(build => {
         .pipe(gulp.dest(path.join(DIST, build.package)));
     },
   );
+  // if (build.package === 'react-relay') {
+  //   copyFilesTaks.push(
+  //     function copyRelayExperimental() {
+  //       return gulp
+  //         .src(['*.graphql'], {
+  //           cwd: path.join(PACKAGES, build.package),
+  //         })
+  //         .pipe(once())
+  //         .pipe(gulp.dest(path.join(DIST, build.package, 'lib')));
+  //     }
+  //   )
+  // }
 });
 const copyFiles = gulp.parallel(copyFilesTasks);
 
 const exportsFiles = gulp.series(
   copyFiles,
   modules,
+  copyRelayExperimental,
   gulp.parallel(
     ...builds.map(
       build =>
