@@ -245,7 +245,6 @@ const builds = [
 ];
 
 const modules = gulp.parallel(
-  // ...builds.concat({package: 'relay-experimental'}).map(
   ...builds.map(
     build =>
       function modulesTask() {
