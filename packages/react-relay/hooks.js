@@ -10,8 +10,8 @@
 
 'use strict';
 
-const EntryPointContainer = require('./relay-experimental/EntryPointContainer');
-const LazyLoadEntryPointContainer = require('./relay-experimental/LazyLoadEntryPointContainer');
+const EntryPointContainer = require('./relay-experimental/EntryPointContainer.react');
+const LazyLoadEntryPointContainer = require('./relay-experimental/LazyLoadEntryPointContainer.react');
 const MatchContainer = require('./relay-experimental/MatchContainer');
 const ProfilerContext = require('./relay-experimental/ProfilerContext');
 const RelayEnvironmentProvider = require('./relay-experimental/RelayEnvironmentProvider');
