@@ -22,7 +22,7 @@ const prepareEntryPoint = require('./relay-experimental/prepareEntryPoint');
 const useBlockingPaginationFragment = require('./relay-experimental/useBlockingPaginationFragment');
 const useFragment = require('./relay-experimental/useFragment');
 const useLazyLoadQuery = require('./relay-experimental/useLazyLoadQuery');
-const usePaginationFragment = require('./relay-experimental/usePaginationFragment');
+const useLegacyPaginationFragment = require('./relay-experimental/useLegacyPaginationFragment');
 const usePreloadedQuery = require('./relay-experimental/usePreloadedQuery');
 const useRefetchableFragment = require('./relay-experimental/useRefetchableFragment');
 const useRelayEnvironment = require('./relay-experimental/useRelayEnvironment');
@@ -54,7 +54,7 @@ module.exports = {
   useBlockingPaginationFragment: useBlockingPaginationFragment,
   useFragment: useFragment,
   useLazyLoadQuery: useLazyLoadQuery,
-  usePaginationFragment: usePaginationFragment,
+  usePaginationFragment: useLegacyPaginationFragment,
   usePreloadedQuery: usePreloadedQuery,
   useRefetchableFragment: useRefetchableFragment,
   useRelayEnvironment: useRelayEnvironment,
