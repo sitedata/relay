@@ -10,12 +10,20 @@
 
 'use strict';
 
+const EntryPointContainer = require('./relay-experimental/EntryPointContainer');
+const LazyLoadEntryPointContainer = require('./relay-experimental/LazyLoadEntryPointContainer');
+const MatchContainer = require('./relay-experimental/MatchContainer');
+const ProfilerContext = require('./relay-experimental/ProfilerContext');
 const RelayEnvironmentProvider = require('./relay-experimental/RelayEnvironmentProvider');
 
 const fetchQuery = require('./relay-experimental/fetchQuery');
+const preloadQuery = require('./relay-experimental/preloadQuery');
+const prepareEntryPoint = require('./relay-experimental/prepareEntryPoint');
+const useBlockingPaginationFragment = require('./relay-experimental/useBlockingPaginationFragment');
 const useFragment = require('./relay-experimental/useFragment');
 const useLazyLoadQuery = require('./relay-experimental/useLazyLoadQuery');
-const useLegacyPaginationFragment = require('./relay-experimental/useLegacyPaginationFragment');
+const usePaginationFragment = require('./relay-experimental/usePaginationFragment');
+const usePreloadedQuery = require('./relay-experimental/usePreloadedQuery');
 const useRefetchableFragment = require('./relay-experimental/useRefetchableFragment');
 const useRelayEnvironment = require('./relay-experimental/useRelayEnvironment');
 
@@ -32,13 +40,22 @@ export type {
  * The public interface for Relay Hooks
  */
 module.exports = {
+  EntryPointContainer: EntryPointContainer,
+  LazyLoadEntryPointContainer: LazyLoadEntryPointContainer,
+  MatchContainer: MatchContainer,
+  ProfilerContext: ProfilerContext,
   RelayEnvironmentProvider: RelayEnvironmentProvider,
 
   fetchQuery: fetchQuery,
+  preloadQuery: preloadQuery,
+  prepareEntryPoint: prepareEntryPoint,
+
   graphql: graphql,
+  useBlockingPaginationFragment: useBlockingPaginationFragment,
   useFragment: useFragment,
-  useLegacyPaginationFragment: useLegacyPaginationFragment,
   useLazyLoadQuery: useLazyLoadQuery,
+  usePaginationFragment: usePaginationFragment,
+  usePreloadedQuery: usePreloadedQuery,
   useRefetchableFragment: useRefetchableFragment,
   useRelayEnvironment: useRelayEnvironment,
 };
