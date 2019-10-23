@@ -12,9 +12,9 @@
 'use strict';
 
 const ExecutionEnvironment = require('fbjs/lib/ExecutionEnvironment');
-const RelayReplaySubject = require('relay-runtime/util/RelayReplaySubject');
+const RelayReplaySubject = require('relay-runtime/lib/util/RelayReplaySubject');
 
-const getRequestIdentifier = require('relay-runtime/util/getRequestIdentifier');
+const getRequestIdentifier = require('relay-runtime/lib/util/getRequestIdentifier');
 const invariant = require('invariant');
 
 const {
