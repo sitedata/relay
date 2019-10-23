@@ -13,9 +13,6 @@
 
 const ExecutionEnvironment = require('fbjs/lib/ExecutionEnvironment');
 
-const ReplaySubject = require('relay-runtime/lib/util/RelayReplaySubject');
-const getRequestIdentifier = require('relay-runtime/lib/util/getRequestIdentifier');
-
 const invariant = require('invariant');
 
 const {
@@ -23,6 +20,9 @@ const {
   Environment,
   getRequest,
   Observable,
+  ReplaySubject,
+  createOperationDescriptor,
+  getRequestIdentifier,
 } = require('relay-runtime');
 
 import type {
