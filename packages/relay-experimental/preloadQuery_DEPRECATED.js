@@ -58,7 +58,10 @@ type PendingQueryEntry =
       fetchKey: ?string | ?number,
       fetchPolicy: PreloadFetchPolicy,
       kind: 'network',
+<<<<<<< HEAD
       name: string,
+=======
+>>>>>>> Add exports to relay-runtime to make available in relay-experimental
       subject: ReplaySubject<GraphQLResponse>,
       subscription: Subscription,
     |}>
