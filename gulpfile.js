@@ -46,7 +46,7 @@ if (RELEASE_COMMIT_SHA && RELEASE_COMMIT_SHA.length !== 40) {
 
 const VERSION = RELEASE_COMMIT_SHA
   ? `0.0.0-experimental-${RELEASE_COMMIT_SHA.substr(0, 8)}`
-  : process.env.npm_package_version ?? '';
+  : process.env.npm_package_version;
 
 const SCRIPT_HASHBANG = '#!/usr/bin/env node\n';
 const DEVELOPMENT_HEADER = `/**
