@@ -142,7 +142,7 @@ function preloadQueryDeduped<TQuery: OperationType>(
     fetchPolicy === STORE_OR_NETWORK_DEFAULT &&
     query != null &&
     (prevQueryEntry?.kind === 'cache' ||
-      environment.check(createOperationDescriptor(query, variables).root));
+      environment.check(createOperationDescriptor(query, variables)));
 
   let nextQueryEntry;
   if (shouldFulfillFromCache) {
