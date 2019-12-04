@@ -187,9 +187,7 @@ module.exports = {
     GraphQLASTNodeGroup,
     GraphQLASTUtils,
     GraphQLNodeMap,
-    FindGraphQLTags,
     StrictMap,
-    RelayFindGraphQLTags,
     compileArtifacts,
     extractFromJS: extractAST.extractFromJS,
     getChangedNodeNames,
@@ -198,6 +196,5 @@ module.exports = {
     md5,
     parseExecutableNode: extractAST.parseExecutableNode,
     toASTRecord: extractAST.toASTRecord,
-    getSchemaInstance,
   },
 };
