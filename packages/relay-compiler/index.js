@@ -198,5 +198,6 @@ module.exports = {
     md5,
     parseExecutableNode: extractAST.parseExecutableNode,
     toASTRecord: extractAST.toASTRecord,
+    getSchemaInstance,
   },
 };
