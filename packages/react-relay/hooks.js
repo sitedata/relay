@@ -11,13 +11,13 @@
 'use strict';
 
 const EntryPointContainer = require('./relay-experimental/EntryPointContainer.react');
-const LazyLoadEntryPointContainer = require('./relay-experimental/LazyLoadEntryPointContainer.react');
+const LazyLoadEntryPointContainer = require('./relay-experimental/LazyLoadEntryPointContainer_DEPRECATED.react');
 const MatchContainer = require('./relay-experimental/MatchContainer');
 const ProfilerContext = require('./relay-experimental/ProfilerContext');
 const RelayEnvironmentProvider = require('./relay-experimental/RelayEnvironmentProvider');
 
 const fetchQuery = require('./relay-experimental/fetchQuery');
-const preloadQuery = require('./relay-experimental/preloadQuery');
+const preloadQuery = require('./relay-experimental/preloadQuery_DEPRECATED');
 const prepareEntryPoint = require('./relay-experimental/prepareEntryPoint');
 const useBlockingPaginationFragment = require('./relay-experimental/useBlockingPaginationFragment');
 const useFragment = require('./relay-experimental/useFragment');
@@ -30,11 +30,15 @@ const useRelayEnvironment = require('./relay-experimental/useRelayEnvironment');
 const {graphql} = require('relay-runtime');
 
 export type {
-  FetchPolicy,
   LoadMoreFn,
   RefetchFn,
   RefetchFnDynamic,
 } from 'relay-experimental';
+
+export type {
+  FetchPolicy,
+  RenderPolicy,
+} from 'relay-runtime';
 
 /**
  * The public interface for Relay Hooks
