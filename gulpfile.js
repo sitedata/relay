@@ -36,7 +36,7 @@ const path = require('path');
 const webpack = require('webpack');
 const webpackStream = require('webpack-stream');
 
-const RELEASE_COMMIT_SHA = process.env.RELEASE_COMMIT_SHA;
+const RELEASE_COMMIT_SHA = "b0f511d69a5a2e8f8c58f28997ca1b16c8bf1c11";
 if (RELEASE_COMMIT_SHA && RELEASE_COMMIT_SHA.length !== 40) {
   throw new Error(
     'If the RELEASE_COMMIT_SHA env variable is set, it should be set to the ' +

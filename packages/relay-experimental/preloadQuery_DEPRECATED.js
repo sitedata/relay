@@ -24,7 +24,6 @@ const {
   getRequest,
   Observable,
   ReplaySubject,
-  createOperationDescriptor,
   getRequestIdentifier,
 } = require('relay-runtime');
 
