@@ -15,7 +15,7 @@
     "fbjs": "^1.0.0",
     "react-relay": "9.0.0",
     "relay-runtime": "9.0.0",
-    "react-refresh": "^0.4.0"
+    "react-refresh": "^0.8.3"
   },
   "directories": {
     "": "./"
