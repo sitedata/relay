@@ -16,7 +16,7 @@
     "update-specs":"spec-md spec/Connections.md > static/graphql/connections.htm; spec-md spec/Mutations.md > static/graphql/mutations.htm; spec-md spec/ObjectIdentification.md > static/graphql/objectidentification.htm"
   },
   "dependencies": {
-    "docusaurus": "1.14.0",
+    "docusaurus": "1.14.7",
     "spec-md": "^1.1.1"
   },
   "resolutions": {
